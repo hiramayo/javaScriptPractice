@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chapter2 2 4</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<nav>
+    
+    <a href="/" >
+        Home
+    </a>
+    
+    <a href="/about.html" >
+        About
+    </a>
+    
+    <a href="/blog.html" >
+        Blog
+    </a>
+    
+</nav>
+<h1>Chapter2 2 4</h1>
+<p>22 Sep 2019 - hiramayo</p>
+
+<h2>問題</h2>
+<p>JSでvarをつけ忘れると、グローバルオブジェクトに、プロパティが追加されてしまう。<br>また、変数の巻き上げ（変数を定義する前にその変数を使用できてしまう）を防ぐためにはどうすれば良いか？</p>
+
+<h2>解答</h2>
+<p>関数の先頭で「var」を使用し、変数を宣言する。</p>
+
+<h2>サンプル</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//単独varパターン</span>
+<span class="kd">function</span> <span class="nx">singleVarPattern</span><span class="p">(){</span>
+    <span class="c1">//テキストを取得し、先頭に「Hello」を追加する</span>
+    <span class="kd">var</span> <span class="nx">textBox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">textBox</span><span class="dl">"</span><span class="p">),</span>
+        <span class="nx">result</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">result</span><span class="dl">"</span><span class="p">),</span>
+        <span class="nx">name</span> <span class="o">=</span> <span class="nx">textBox</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="nx">result</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+    
+</code></pre></div></div>
+<p>名前：
+<input type="text" id="textBox" />
+<button onclick="singleVarPattern()">greeting</button></p>
+<p id="result"></p>
+<script>
+    //単独varパターン
+function singleVarPattern(){
+    //テキストを取得し、先頭に「Hello」を追加する
+    var textBox = document.getElementById("textBox"),
+        result = document.getElementById("result"),
+        name = textBox.value;
+    result.textContent = "Hello, " + name;
+}
+
+</script>
+
+
+
+
+</body>
+</html>
