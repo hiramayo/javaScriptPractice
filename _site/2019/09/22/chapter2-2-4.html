@@ -32,13 +32,25 @@
 <p>関数の先頭で「var」を使用し、変数を宣言する。</p>
 
 <h2>サンプル</h2>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//単独varパターン</span>
-<span class="kd">function</span> <span class="nx">singleVarPattern</span><span class="p">(){</span>
-    <span class="c1">//テキストを取得し、先頭に「Hello」を追加する</span>
-    <span class="kd">var</span> <span class="nx">textBox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">textBox</span><span class="dl">"</span><span class="p">),</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//for-inループ</span>
+<span class="kd">function</span> <span class="nx">forin</span><span class="p">(){</span>
+    <span class="c1">//オブジェクト</span>
+    <span class="kd">var</span> <span class="nx">man</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hiramayo</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">age</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span>
+            <span class="na">address</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Tokyo</span><span class="dl">"</span>
+        <span class="p">},</span>
         <span class="nx">result</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">result</span><span class="dl">"</span><span class="p">),</span>
-        <span class="nx">name</span> <span class="o">=</span> <span class="nx">textBox</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
-    <span class="nx">result</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
+        <span class="nx">str</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="c1">//プロトタイプにプロパティを追加</span>
+    <span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">newprop</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">newProp</span><span class="dl">"</span><span class="p">;</span>
+    <span class="c1">//プロパティを表示</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">prop</span> <span class="k">in</span> <span class="nx">man</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">man</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">prop</span><span class="p">)){</span>
+            <span class="nx">str</span> <span class="o">+=</span> <span class="nx">prop</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">:</span><span class="dl">"</span> <span class="o">+</span>  <span class="nx">man</span><span class="p">[</span><span class="nx">prop</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">result</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">str</span><span class="p">;</span>
 <span class="p">}</span>
     
 </code></pre></div></div>
