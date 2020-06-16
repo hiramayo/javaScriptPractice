@@ -8,6 +8,7 @@ function findNode(callBack) {
 }
 
 //nodeListのforEachで呼び出されるcallBack
+//nodeList.prototype.forEachには、以下の３つのパラメータが設定可能。
 function hide(currentValue, currentIndex, listObj){
     currentValue.style.display = "none";
     console.log(currentIndex);
@@ -15,6 +16,6 @@ function hide(currentValue, currentIndex, listObj){
 }
 
 //nodeを隠す
-function click(){
+function execute(){
     findNode(hide);
 }
