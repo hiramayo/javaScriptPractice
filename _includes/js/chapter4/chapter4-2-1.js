@@ -42,7 +42,7 @@ function execute(){
     findNode(hide);
 }
 
-//nodeを緑色に
+//nodeを緑色にする
 function execute2(){
     findNodeArray(color);
 }
