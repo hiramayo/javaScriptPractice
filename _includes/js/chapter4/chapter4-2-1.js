@@ -22,7 +22,7 @@ function findNodeArray(callBack) {
 
     nodeList.forEach(function(node,index){
         if(typeof callBack === "function"){
-            nodeList.forEach(callBack);
+            callBack(node);
         }
         nodeArray.push(node);
     })
